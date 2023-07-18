@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: #cecece;
+}
+
+#display-top,
+#display-bot{
+  border: 1px rgb(215, 252, 186) solid;
+  height: 30px;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  padding: 5px;
+}
+
