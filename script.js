@@ -5,9 +5,11 @@ const operators = Array.from(document.getElementsByClassName('operator'))
 const clear = document.getElementById('clear')
 const equals = document.getElementById('equals')
 const dot = document.getElementById('dot')
+const plusMinus = document.getElementById('plus-minus')
 let n1;
 let n2;
 let op;
+let minus = false
 
 numbers.forEach(n => {
   n.addEventListener('click', () => {
@@ -34,6 +36,7 @@ operators.forEach( o => {
 clear.addEventListener('click', () => { 
   n1 = n2 = op = undefined
   displayTop.textContent = ''
+  displayBot.textContent = ''
 })
 
 equals.addEventListener('click', () => {
@@ -56,6 +59,14 @@ equals.addEventListener('click', () => {
 dot.addEventListener('click', () => {
   if (displayBot.textContent !== '' && !displayBot.textContent.includes('.')){
     displayBot.textContent += '.'
+  }
+})
+
+plusMinus.addEventListener('click', () => {
+  minus === false ? minus = true : minus = false
+  if (minus === true && displayBot.textContent === '') {
+    displayBot.textContent += '-'
+    minus = false
   }
 })
 
